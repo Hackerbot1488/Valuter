@@ -1,0 +1,13 @@
+version: "2.0"
+services:
+  server:
+    image: node-server
+    ports:
+      - 1488:1488
+  client:
+    image: client-valuter
+    ports:
+      - 5000:5000
+    network_mode: host
+    depends_on:
+      - server
